@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Chat | Socket.io</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Username Modal/Form -->
+  <div id="username-container" class="username-container">
+    <div class="username-card">
+      <h2>Join the Chat</h2>
+      <input type="text" id="username-input" placeholder="Enter username" maxlength="20" autocomplete="off">
+      <button id="join-btn">Join Chat</button>
+      <p id="error-msg" class="error"></p>
+    </div>
+  </div>
+
+  <!-- Main Chat UI (hidden initially) -->
+  <div id="chat-container" class="chat-container hidden">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h3>Online Users</h3>
+      </div>
+      <ul id="users-list" class="users-list"></ul>
+    </div>
+
+    <div class="main-chat">
+      <div class="chat-header">
+        <h2>Real-Time Chat</h2>
+        <span id="current-user-badge"></span>
+      </div>
+      
+      <div id="messages" class="messages"></div>
+      
+      <div class="typing-indicator" id="typing-indicator"></div>
+      
+      <div class="input-area">
+        <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" disabled>
+        <button id="send-btn" disabled>Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
